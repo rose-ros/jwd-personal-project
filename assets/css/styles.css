@@ -8,7 +8,7 @@ body {
     font-family: 'Grandiflora One', serif;
 }
 
-.container, p {
+.container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,16 +17,17 @@ body {
   }
 
 h1 {
-    margin: 0 0 20px 0;
+    margin: 20px 0;
     text-align: center;   
     font-family: 'Moirai One', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 #image-cont {
@@ -45,7 +46,14 @@ input.file {
 #gen-color, #upload {
     font-family: 'Grandiflora One', serif;
     font-size: 1.5rem;
+    border: 0;
     border-radius: 30px;
-    padding: 20px;    
+    line-height: 2em;
+    padding:  0 20px;    
     margin: auto;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 10px 0 20px 0;
 }
