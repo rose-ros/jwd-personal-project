@@ -5,25 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Your Colors</title>
     <link href="assets/css/styles.css" rel="stylesheet" type="text/css"/>
-    <!--Fonts-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
 </head>
 <body>
-    <div class="container">
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">History</li>
+            <li class="nav-item">Favorites</li>
+        </ul>
+        <ul class="history">
+            <li>Clear History</li>
+            <li>Color 1</li>
+            <li>Color 2</li>
+        </ul>
+        <ul class="favorites">
+            <li>Color 1</li>
+            <li>Color 2</li>
+            <li>Color 3</li>
+        </ul>
+    </nav>
+
+    <div class="container bg-color">
         <header>
             <h1>Discover Your Colors</h1>
         </header>
         <main>
             <div id="image-cont">
-                <div class="error-msg"></div>
+                <img src="assets/media/placeholder-photo.png" id="profile-pic">
             </div>
-            <input type="button" id="gen-color" value="Generate Color">
-            <button id="upload" onclick="document.querySelector('.file').click(); return false;">Upload Image</button>
-            <input type="file" class="file" accept="image/png, image/jpeg, image/jpg">
-            <p>#000000</p>
+            <!--generate color-->
+            <button class="gen-color hide">Generate Color</button>
+
+            <!--upload image-->
+            <label for="upload" id="upload-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i> Upload Image</label>
+            <input type="file" id="upload" accept="image/png, image/jpeg, image/jpg">
+
+            <!--hex placeholder-->
+            <p id="hex" class="hide">#000000</p>
+
         </main>
     </div>
 
 
+    <script src="https://kit.fontawesome.com/625e8bcbb5.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

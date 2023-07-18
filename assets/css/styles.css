@@ -1,19 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Moirai+One&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
 body {
     background-image: url("/assets/media/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Grandiflora One', serif;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar {
+    background-color: #171717;
+    color: white;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    padding: 7.5px 20px;
+}
+
+.nav-item:hover {
+    background-color: black;
+}
+
+/* dropdown */
+.history, .favorites {
+    display: none;
+    /* display: flex; */
+    justify-content: space-evenly;
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
   }
 
 h1 {
@@ -28,32 +65,40 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    margin: 0 auto;
 }
 
-#image-cont {
-    border: 1px solid black;
+#image-cont img {
     border-radius: 50%;
     min-width: 250px;
-    max-width: 500px;
+    max-width: 300px;
     margin-bottom: 20px;
     aspect-ratio: 1 / 1;    
 }
 
-input.file {
+/* hide default file input*/
+#upload {
     display: none;
 }
 
-#gen-color, #upload {
-    font-family: 'Grandiflora One', serif;
+.gen-color, label {
+    font-family: 'Courier New', Courier, monospace;    
     font-size: 1.5rem;
+    line-height: 2em;
     border: 0;
     border-radius: 30px;
-    line-height: 2em;
     padding:  0 20px;    
     margin: auto;
-}
+    background-color: #f5e6d8;
+    box-shadow: 0 0 5px #000;
+}  
 
+/* hex code */
 p {
     font-size: 1.5rem;
     margin: 10px 0 20px 0;
+}
+
+.hide {
+    display: none;
 }
