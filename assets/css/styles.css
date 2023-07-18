@@ -16,7 +16,7 @@ li {
 }
 
 body {
-    background-image: url("/assets/media/background.jpg");
+    background-image: url("/assets/media/background-abstract.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -52,13 +52,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-  }
+}
 
 h1 {
     margin: 20px 0;
     text-align: center;   
     font-family: 'Moirai One', cursive;
     font-size: 2.5rem;
+    text-shadow: 0 0 8px #ffffff;
 }
 
 main {
@@ -69,10 +70,12 @@ main {
     margin: 0 auto;
 }
 
-#image-cont img {
+
+#img-cont img {
+    object-fit: cover;
     border-radius: 50%;
-    min-width: 250px;
-    max-width: 300px;
+    height: 400px;
+    width: auto;
     margin-bottom: 20px;
     aspect-ratio: 1 / 1;    
 }
@@ -96,10 +99,19 @@ main {
 
 /* hex code */
 p {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin: 10px 0 20px 0;
+    text-shadow: 0 0 5px #ffffff;
 }
 
 .hide {
     display: none;
+}
+
+
+/* media queries*/
+@media only screen and (max-width: 600px) {
+    #img-cont img {
+        height: 250px;
+     }
 }
