@@ -5,69 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Your Colors</title>
     <link href="assets/css/styles.css" rel="stylesheet" type="text/css"/>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
 </head>
+
 <body>
-    <!--navbar-->
-    <nav class="navbar">
-        <ul class="navbar-nav">
+    <div class="bg-color">
+
+        <!--navbar-->
+        <nav class="navbar">
+            <!--small screen menu toggle-->
             <button class="navbar-toggle">
                 <span class="navbar-toggle-icon">
                     <i class="fa-solid fa-bars"></i>
                 </span>
             </button>  
-            <li class="nav-item history-toggle">History</li>
-            <li class="nav-item favorites-toggle">Favorites</li>
-        </ul>
-        <!--history dropdown-->
-        <div class="dropdown history-items">
-            <ul id="history">
-                <li>Color 1</li>
-                <li>Color 2</li>
-                <li>Color 3</li>
+
+            
+            <ul class="nav-items">
+                <!--history dropdown-->
+                <li class="nav-tab history-tab">
+                    <a href="#" class="nav-link">History</a>
+                    <div class="dropdown history-dropdown">
+                        <ul id="history">
+                            <li>Color 1</li>
+                            <li>Color 2</li>
+                            <li>Color 3</li>
+                        </ul>
+                        <a href="#" class="clear" id="clear-history">Nothing here yet!</a>
+                    </div>
+                </li>
+                <!--favorites dropdown-->
+                <li class="nav-tab favorites-tab">
+                    <a href="#" class="nav-link">Favorites</a>
+                    <div class="dropdown favorites-dropdown">
+                        <ul id="favorites">
+                            <li>Color 1</li>
+                            <li>Color 2</li>
+                            <li>Color 3</li>
+                        </ul>
+                        <a href="#" class="clear" id="clear-favorites">Nothing here yet!</a>
+                    </div>
+                </li>
             </ul>
-            <a href="#" id="clear-history">Clear History</a>
+        </nav>
+
+        <div class="content">
+            <header>
+                <h1>Discover Your Colors</h1>
+            </header>
+            <main>
+                <div id="img-cont">
+                    <img src="assets/media/default.png" id="profile-pic">
+                </div>
+                
+                <!--upload image-->
+                <label for="upload" id="upload-btn">
+                    <!--upload icon-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M1.8275 17.5H17.3741" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9.60079 13.3542V1.5M9.60079 1.5L14.1352 4.95749M9.60079 1.5L5.06638 4.95749" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Upload Image
+                </label>
+                <input type="file" id="upload" accept="image/png, image/jpeg, image/jpg">
+                <!--generate color-->
+                <button class="gen-color">Generate Color</button>
+
+                <div class="info-box">                    
+                    <!--hex placeholder-->
+                    <p id="hex"></p>
+                    <button>add to favorites</button>
+                </div>
+            </main>
         </div>
-        <!--favorites dropdown-->
-        <div class="dropdown favorites-items">
-            <ul id="favorites">
-                <li>Color 1</li>
-                <li>Color 2</li>
-                <li>Color 3</li>
-            </ul>
-            <a href="#" id="clear-favorites">Clear Favorites</a>
-        </div>
 
-    </nav>
-
-    <div class="content bg-color">
-        <header>
-            <h1>Discover Your Colors</h1>
-        </header>
-        <main>
-            <div id="img-cont">
-                <img src="assets/media/default.png" id="profile-pic">
-            </div>
-            <!--generate color-->
-            <button class="gen-color hide">Generate Color</button>
-
-            <!--upload image-->
-            <label for="upload" id="upload-btn">
-                <!--upload icon-->
-                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-                    <path d="M1.8275 17.5H17.3741" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9.60079 13.3542V1.5M9.60079 1.5L14.1352 4.95749M9.60079 1.5L5.06638 4.95749" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Upload Image
-            </label>
-            <input type="file" id="upload" accept="image/png, image/jpeg, image/jpg">
-
-            <!--hex placeholder-->
-            <p id="hex"></p>
-
-        </main>
     </div>
-
 
     <script src="https://kit.fontawesome.com/625e8bcbb5.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
