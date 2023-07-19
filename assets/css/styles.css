@@ -109,7 +109,7 @@ body {
 }
 
 h1 {
-    margin: 20px 0;
+    margin: 20px 0 30px;
     text-align: center;   
     font-family: 'Moirai One', cursive;
     font-size: 2.5rem;
@@ -122,8 +122,7 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 100%;
-    /* margin: 0 auto; */
+    margin: 0 auto;
 }
 
 
@@ -132,7 +131,7 @@ main {
     border-radius: 50%;
     height: 350px;
     width: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     aspect-ratio: 1 / 1;    
 }
 
@@ -144,7 +143,15 @@ main {
 .info-box {
     display: none;
     flex-direction: column;
-    background-color: #171717;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    margin: 0 auto 20px;
+    width: 65%;
+    box-shadow: 0 0 5px #ffffff;
+    opacity: 0.5;
 }
 
 .gen-color {
@@ -154,29 +161,35 @@ main {
 .gen-color, label {
     font-family: 'Courier New', Courier, monospace;    
     font-size: 1.5rem;
-    line-height: 2em;
-    border: 0;
-    border-radius: 30px;
-    padding:  0 20px;    
-    margin: 0 auto 20px;
-    background-color: #f5e6d8;
-    box-shadow: 0 0 5px #000;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    margin: 0 auto 30px;
+    padding: 5px;
+    width: 65%;
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #ffffff;
 }  
 
 /* hex code */
 p {
     font-size: 1.75rem;
     margin: 10px 0 20px 0;
-    text-shadow: 0 0 5px #ffffff;
+    text-shadow: 0 0 1px #ffffff;
 }
 
-.hide {
-    display: none;
+.add-favorite {
+    font-size: 1em;
 }
 
-.flex {
-    display: flex;
+.add-favorite:hover #add-favorite {
+    text-decoration: underline;
 }
+
+.add-favorite:hover .fa-heart {
+    color: #ff2646;
+}
+
 
 
 /* media queries*/

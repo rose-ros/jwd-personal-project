@@ -53,6 +53,7 @@ const profilePic = document.getElementById("profile-pic");
 const infoBox = document.querySelector('.info-box');
 const genColor = document.querySelector(".gen-color");
 const hexCode = document.getElementById("hex");
+const bgColor = document.querySelector('.bg-color');
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
 // uploads image
@@ -63,7 +64,6 @@ upload.addEventListener('change', () => {
     if (upload.files && upload.files[0]) {
         displayNone(uploadBtn);
         displayBlock(genColor);
-        displayFlex(infoBox);
     } else {
         displayBlock(uploadBtn);
         displayNone(genColor);
@@ -82,5 +82,12 @@ genColor.addEventListener('click', () => {
         color += hex[getRandomNumber()];
     }
     hexCode.innerHTML = color;
-    document.querySelector(".bg-color").style.backgroundColor = color;
+    bgColor.style.backgroundColor = color;
+    displayFlex(infoBox);
 });
+
+genColor.addEventListener('mouseover', () => genColor.style.opacity = "1");
+genColor.addEventListener('mouseout', () => genColor.style.opacity = "0.5");
+
+infoBox.addEventListener('mouseover', () => infoBox.style.opacity = "1");
+infoBox.addEventListener('mouseout', () => infoBox.style.opacity = "0.5");
