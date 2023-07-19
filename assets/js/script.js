@@ -4,13 +4,30 @@ const upload = document.getElementById("upload");
 const hexCode = document.getElementById("hex");
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
-// const navbarToggle = document.getElementById("navbar-toggle");
-// const navbarLinks = document.querySelector(".navbar-nav");
+// navbar
+const navbar = document.querySelector('.navbar');
 
-// navbarToggle.addEventListener("click", () => {
-//   navbarLinks.classList.toggle("show");
-// });
+const historyTab = document.querySelector('.history-toggle');
+const historyItems = document.querySelector('.history-items');
 
+const favoritesTab = document.querySelector('.favorites-toggle');
+const favoritesItems = document.querySelector('.favorites-items');
+
+historyTab.addEventListener('mouseover', () => {
+    historyItems.style.display = 'flex';
+});
+
+navbar.addEventListener('mouseout', () => {
+    historyItems.style.display = 'none';
+});
+
+favoritesTab.addEventListener('mouseover', () => {
+    favoritesItems.style.display = 'flex';
+});
+  
+navbar.addEventListener('mouseout', () => {
+    favoritesItems.style.display = 'none';
+});
 
 
 // uploads image
