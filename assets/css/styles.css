@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Moirai+One&display=swap');
 
+
+/* defult styling start */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;    
 }
 
 a {
@@ -15,12 +18,19 @@ li {
     list-style: none;
 }
 
+button {
+    background-color: inherit;
+    color: inherit;
+    border: 0;
+}
+/* default styling end */
+
+
 body {
     background-image: url("/assets/media/background-abstract.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .navbar {
@@ -29,26 +39,42 @@ body {
 }
 
 .navbar-nav {
-    display: flex;
+    display: flex;  
     justify-content: space-between;
 }
 
-.nav-item {
+.nav-item, .navbar-toggle, .dropdown li, #clear-history, #clear-favorites {
     padding: 7.5px 20px;
 }
 
-.nav-item:hover {
+.nav-item:hover, .navbar-toggle:hover {
     background-color: black;
 }
 
-/* dropdown */
-.history, .favorites {
+.navbar-toggle {
     display: none;
-    /* display: flex; */
-    justify-content: space-evenly;
 }
 
-.container {
+/* dropdown */
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+}    
+
+.dropdown ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* align favorites ro the right */
+.favorites-tab ul, #clear-favorites {
+    justify-content: flex-end;
+    text-align: end;
+}
+
+
+.content {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -74,7 +100,7 @@ main {
 #img-cont img {
     object-fit: cover;
     border-radius: 50%;
-    height: 400px;
+    height: 350px;
     width: auto;
     margin-bottom: 20px;
     aspect-ratio: 1 / 1;    
@@ -114,4 +140,18 @@ p {
     #img-cont img {
         height: 250px;
      }
+}
+
+@media only screen and (max-width: 450px) {
+    .navbar-nav {
+        justify-content: end;
+    }
+    
+    .nav-item {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
 }

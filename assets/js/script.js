@@ -4,6 +4,14 @@ const upload = document.getElementById("upload");
 const hexCode = document.getElementById("hex");
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
+// const navbarToggle = document.getElementById("navbar-toggle");
+// const navbarLinks = document.querySelector(".navbar-nav");
+
+// navbarToggle.addEventListener("click", () => {
+//   navbarLinks.classList.toggle("show");
+// });
+
+
 
 // uploads image
 upload.addEventListener('change', () => {

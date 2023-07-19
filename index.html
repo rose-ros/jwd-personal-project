@@ -8,25 +8,39 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
 </head>
 <body>
-
+    <!--navbar-->
     <nav class="navbar">
         <ul class="navbar-nav">
+            <button class="navbar-toggle">
+                <span class="navbar-toggle-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+            </button>  
             <li class="nav-item">History</li>
             <li class="nav-item">Favorites</li>
         </ul>
-        <ul class="history">
-            <li>Clear History</li>
-            <li>Color 1</li>
-            <li>Color 2</li>
-        </ul>
-        <ul class="favorites">
-            <li>Color 1</li>
-            <li>Color 2</li>
-            <li>Color 3</li>
-        </ul>
+        <!--history dropdown-->
+        <div class="dropdown history-tab">
+            <ul id="history">
+                <li>Color 1</li>
+                <li>Color 2</li>
+                <li>Color 3</li>
+            </ul>
+            <a href="#" id="clear-history">Clear History</a>
+        </div>
+        <!--favorites dropdown-->
+        <div class="dropdown favorites-tab">
+            <ul id="favorites">
+                <li>Color 1</li>
+                <li>Color 2</li>
+                <li>Color 3</li>
+            </ul>
+            <a href="#" id="clear-favorites">Clear Favorites</a>
+        </div>
+
     </nav>
 
-    <div class="container bg-color">
+    <div class="content bg-color">
         <header>
             <h1>Discover Your Colors</h1>
         </header>
@@ -38,7 +52,14 @@
             <button class="gen-color hide">Generate Color</button>
 
             <!--upload image-->
-            <label for="upload" id="upload-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i> Upload Image</label>
+            <label for="upload" id="upload-btn">
+                <!--upload icon-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                    <path d="M1.8275 17.5H17.3741" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.60079 13.3542V1.5M9.60079 1.5L14.1352 4.95749M9.60079 1.5L5.06638 4.95749" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Upload Image
+            </label>
             <input type="file" id="upload" accept="image/png, image/jpeg, image/jpg">
 
             <!--hex placeholder-->
