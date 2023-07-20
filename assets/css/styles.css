@@ -35,7 +35,8 @@ body {
 
 .navbar {
     position: relative;
-    display: flex;      
+    /* display: flex;      */
+    display: none; 
     color: white;
 }
 
