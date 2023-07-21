@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Moirai+One&display=swap');
 
 
-/* defult styling start */
+/* default styling start */
 * {
     margin: 0;
     padding: 0;
@@ -35,8 +35,8 @@ body {
 
 .navbar {
     position: relative;
-    /* display: flex;      */
-    display: none; 
+    display: flex;     
+    /* display: none;  */
     color: white;
 }
 
@@ -63,6 +63,7 @@ body {
 .nav-link, .navbar-toggle, #history li, #favorites li, .clear {
     padding: 7.5px 20px;
 }
+
 
 .nav-link:hover {
     background-color: #282828;
@@ -100,6 +101,18 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+
+circle {
+    /* fill: #ff2646; */
+    stroke: #000;
+    stroke-width: 2;
+}
+
+.deleteBtn {
+    /* display: inline; */
+    display: none;
 }
 
 

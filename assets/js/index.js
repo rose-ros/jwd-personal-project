@@ -1,3 +1,12 @@
+// INDEX.JS
+
+const colorManager = new ColorManager(0);
+
+colorManager.load();
+colorManager.render();
+
+
+
 // navbar selectors
 const navbar = document.querySelector('.navbar');
 const historyTab = document.querySelector('.history-tab');
@@ -75,7 +84,7 @@ function getRandomNumber() {
     return Math.floor(Math.random() * hex.length);
 }
 
-// generates random hex on click
+// generates random hex on click + add to history
 genColor.addEventListener('click', () => {
     let color = "#";
     for (let i = 0; i < 6; i++) {
@@ -84,7 +93,54 @@ genColor.addEventListener('click', () => {
     hexCode.innerHTML = color;
     bgColor.style.backgroundColor = color;
     displayFlex(infoBox);
+
+    colorManager.addColor(color);
+    colorManager.render();
+    colorManager.save();
 });
+
+const colorsList = document.querySelector('#history');
+
+const parentColor = e.target.parentElement;
+const colorId = Number(parentColor.dataset.colorId);
+const color = colorManager.getColorById(colorId);
+
+// deletes clicked color
+colorsList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+        const parentColor = e.target.parentElement;
+        const colorId = Number(parentColor.dataset.colorId);
+        const color = colorManager.getColorById(colorId);
+
+        if (color) {
+            colorManager.deleteColor(colorId);
+            colorManager.render();
+            colorManager.save();
+        }
+    }
+});
+
+colorsList.addEventListener('mouseover', (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+        const deleteBtn = e.target;
+        deleteBtn.style.display = 'inline';
+    }
+});
+
+colorsList.addEventListener('mouseout', (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+        const deleteBtn = e.target;
+        deleteBtn.style.display = 'none';
+    }
+});
+
+
+const clearHistory = document.getElementById('clear-history');
+
+clearHistory.addEventListener('click', () => {
+    const history = document.getElementById(history);
+    colors = [];
+})
 
 genColor.addEventListener('mouseover', () => genColor.style.opacity = "1");
 genColor.addEventListener('mouseout', () => genColor.style.opacity = "0.5");
