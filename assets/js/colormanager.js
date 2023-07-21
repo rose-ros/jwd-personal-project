@@ -15,7 +15,7 @@ class ColorManager {
         this.currentId = currentId;
     }
 
-    // Adding new task programmatically
+    // Adding new color programmatically
     addColor (colorHex) {
         const color = {
             id: this.currentId++,
@@ -42,7 +42,7 @@ class ColorManager {
         colorsList.innerHTML = colorsHtml;
     }
 
-    // Saves tasks to localStorage
+    // Saves colors to localStorage
     save() {
         const colorsJson = JSON.stringify(this.colors);
         localStorage.setItem('colors', colorsJson);
@@ -50,7 +50,7 @@ class ColorManager {
         localStorage.setItem('currentId', currentId);
     }
 
-    // Loads tasks from localStorage
+    // Loads colors from localStorage
     load() {
         const savedColors = localStorage.getItem('colors');
         if(savedColors) {
@@ -63,7 +63,7 @@ class ColorManager {
         }
     }
 
-    // Finds matching task when called
+    // Finds matching color when called
     getColorById(colorId) {
         let foundColor;
         for (let i = 0; i < this.colors.length; i++) {

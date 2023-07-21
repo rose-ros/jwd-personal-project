@@ -1,5 +1,3 @@
-// INDEX.JS
-
 const colorManager = new ColorManager(0);
 
 colorManager.load();
